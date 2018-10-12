@@ -1,0 +1,90 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+#include<stdlib.h>
+using namespace std;
+
+int maxsize=50;
+int stack[50];
+int top=-1;
+void push()
+{   
+    if(top==maxsize-1)
+    {
+        cout<<"overflow";
+    }
+else{  
+    int item;
+    cout<<"Enter the item ";
+    cin>>item;
+    top=top+1;
+    stack[top]=item;
+  
+    
+}
+}
+
+void pop()
+{
+    if(top==-1)
+    {
+        cout<<"Underflow";
+    }
+
+    else
+    { int temp;
+    temp=stack[top];
+        top=top-1;
+    }
+}
+
+void traverse()
+{
+    if(top==-1)
+    {
+        cout<<"overflow";
+    }
+
+    else
+    {
+        for(int i=top;i>-1;i--)
+        {
+            cout<<stack[i]<<"->";
+        }
+    }
+}
+
+int main()
+{
+    int ch;
+   while(1)
+   {
+    cout<<"Enter \n1.push\n2.pop\n3.traverse\n4.exit";
+   cout<<"\n";
+    cin>>ch;
+   
+        switch(ch)
+        {
+            case 1:push();
+                 break;
+                 
+            case 2:pop();
+                 break;
+            case 3: traverse();
+                break;
+            case 4: exit(0);
+            default:cout<<"wrong option";
+            
+            
+        }
+    }
+    
+
+    return 0;
+}
